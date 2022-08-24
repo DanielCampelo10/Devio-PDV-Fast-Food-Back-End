@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import Conection from "../database/Conection";
+import { Pedido } from "./Pedido";
 
 export class Produto {
   instance: any;
@@ -29,15 +30,20 @@ export class Produto {
           type: DataTypes.STRING,
         },
         valor: {
-          type: DataTypes.NUMBER,
+          type: DataTypes.DECIMAL,
         },
         quant_pedidos: {
           type: DataTypes.INTEGER,
         },
+        createdAt: {
+          type: DataTypes.DATE,
+        },
+        updatedAt: {
+          type: DataTypes.DATE,
+        },
       },
       {
         tableName: this.modelName.toLowerCase(),
-        timestamps: true,
       }
     );
   }

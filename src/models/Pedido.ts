@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import Conection from "../database/Conection";
+import { Produto } from "./Produto";
 
 export class Pedido {
   instance: any;
@@ -20,15 +21,20 @@ export class Pedido {
           type: DataTypes.STRING,
         },
         valor: {
-          type: DataTypes.NUMBER,
+          type: DataTypes.DECIMAL,
         },
         status: {
-          type: DataTypes.ENUM,
+          type: DataTypes.STRING,
+        },
+        createdAt: {
+          type: DataTypes.DATE,
+        },
+        updatedAt: {
+          type: DataTypes.DATE,
         },
       },
       {
         tableName: this.modelName.toLowerCase(),
-        timestamps: true,
       }
     );
   }

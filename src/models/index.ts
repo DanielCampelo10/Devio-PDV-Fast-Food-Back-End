@@ -7,8 +7,8 @@ const pedido = new Pedido(mySqlConection);
 const produto = new Produto(mySqlConection);
 const pedidoProduto = new PedidoProduto(mySqlConection);
 
-pedido.instance.belogsToMany(produto, { through: pedidoProduto })
-produto.instance.belogsToMany(pedido, { through: pedidoProduto })
+// pedido.belongsToMany(produto, { foreignKey: "id_pedido", through: pedidoProduto });
+// produto.belongsToMany(pedido, { foreignKey: "id_pedido", through: pedidoProduto });
 
 export {
   pedido,

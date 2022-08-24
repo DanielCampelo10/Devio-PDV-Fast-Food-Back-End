@@ -1,7 +1,7 @@
 import { QueryInterface, DataTypes } from "sequelize";
 export default {
   up: (queryInterface: QueryInterface) => {
-    return queryInterface.createTable("pedido-produto", {
+    return queryInterface.createTable("pedido_produto", {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -19,11 +19,17 @@ export default {
         type: DataTypes.INTEGER,
       },
       valor_vendido: {
-        type: DataTypes.DOUBLE,
+        type: DataTypes.DECIMAL,
+      },
+      createdAt: {
+        type: DataTypes.DATE(),
+      },
+      updatedAt: {
+        type: DataTypes.DATE(),
       },
     },);
   },
   down: (queryInterface: QueryInterface) => {
-    return queryInterface.dropTable("pedido-produto");
+    return queryInterface.dropTable("pedido_produto");
   },
 };

@@ -20,10 +20,16 @@ export default {
         type: DataTypes.STRING,
       },
       valor: {
-        type: DataTypes.DOUBLE,
+        type: DataTypes.DECIMAL,
       },
       quant_pedidos: {
         type: DataTypes.INTEGER,
+      },
+      createdAt: {
+        type: DataTypes.DATE(),
+      },
+      updatedAt: {
+        type: DataTypes.DATE(),
       },
     },);
   },

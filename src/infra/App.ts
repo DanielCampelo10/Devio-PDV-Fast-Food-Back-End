@@ -1,6 +1,6 @@
 import Express, { Application } from "express";
 import { mySqlConection } from "../database";
-// import BaseRoutes from "./BaseRoutes";
+import BaseRoutes from "./BaseRoutes";
 
 type SetupOptions = {
   port?: number;
@@ -18,7 +18,7 @@ export default class App {
   async setup(options: SetupOptions): Promise<void> {
     const selectedPort = options.port ? options.port : this.defaultPort;
     this.instance.use(Express.json());
-    // this.instance.use(BaseRoutes);
+    this.instance.use(BaseRoutes);
 
     mySqlConection.hasConection();
 

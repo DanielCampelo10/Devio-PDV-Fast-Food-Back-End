@@ -11,10 +11,16 @@ export default {
         type: DataTypes.STRING,
       },
       valor: {
-        type: DataTypes.DOUBLE,
+        type: DataTypes.DECIMAL,
       },
       status: {
         type: DataTypes.STRING,
+      },
+      createdAt: {
+        type: DataTypes.DATE(),
+      },
+      updatedAt: {
+        type: DataTypes.DATE(),
       },
     },);
   },

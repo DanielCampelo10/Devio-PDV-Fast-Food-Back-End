@@ -3,7 +3,7 @@ import Conection from "../database/Conection";
 
 export class PedidoProduto {
   instance: any;
-  modelName: string = "Pedido-Produto";
+  modelName: string = "Pedido_Produto";
 
   constructor(conexao: Conection) {
     const con = conexao.getInstance();
@@ -18,22 +18,27 @@ export class PedidoProduto {
         },
         id_pedido: {
           type: DataTypes.INTEGER,
-          references: { model: "pedido", key: "id" },
+          references: { model: "Pedido", key: "id" },
         },
         id_produto: {
           type: DataTypes.INTEGER,
-          references: { model: "produto", key: "id" },
+          references: { model: "Produto", key: "id" },
         },
         quantidade: {
           type: DataTypes.INTEGER,
         },
         valor_vendido: {
-          type: DataTypes.NUMBER,
+          type: DataTypes.DECIMAL,
+        },
+        createdAt: {
+          type: DataTypes.DATE,
+        },
+        updatedAt: {
+          type: DataTypes.DATE,
         },
       },
       {
         tableName: this.modelName.toLowerCase(),
-        timestamps: true,
       }
     );
   }
